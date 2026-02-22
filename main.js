@@ -1,4 +1,7 @@
-let pokeCounter = 1;
+let pokeCounter = 1025;
+let infoMoves = true; //true is info, moves is false;
+let data = null;
+
 const leftButton = document.getElementById("left-button");
 const rightButton = document.getElementById("right-button");
 const infoButton = document.getElementById("info-button");
@@ -52,15 +55,38 @@ async function getPokemon(id) {
   document.getElementById("type-1").style.backgroundColor =
     typeColor.get(type1);
 }
-
-leftButton.addEventListener("click", function () {
+leftButton.addEventListener("click", () => {
   if (pokeCounter > 1) {
     pokeCounter = pokeCounter - 1;
   }
+  console.log(pokeCounter);
   getPokemon(pokeCounter);
 });
 
-rightButton.addEventListener("click", function () {
-  pokeCounter = pokeCounter + 1;
+rightButton.addEventListener("click", () => {
+  if (pokeCounter < 1025) {
+    pokeCounter = pokeCounter + 1;
+  }
+  console.log(pokeCounter);
   getPokemon(pokeCounter);
+});
+function loadInfoMoves() {
+  if (infoMoves) {
+    document.getElementById("info-moves-title").textContent = "Info";
+  } else {
+    document.getElementById("info-moves-title").textContent = "Moves";
+  }
+}
+infoButton.addEventListener("click", () => {
+  infoMoves = true;
+  infoButton.style.backgroundColor = "#adff2f";
+  movesButton.style.backgroundColor = "#d3d3d3";
+  loadInfoMoves();
+});
+
+movesButton.addEventListener("click", () => {
+  infoMoves = false;
+  movesButton.style.backgroundColor = "#adff2f";
+  infoButton.style.backgroundColor = "#d3d3d3";
+  loadInfoMoves();
 });

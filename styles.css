@@ -79,7 +79,7 @@ body {
   background-color: lightgray;
 }
 .left-button:hover {
-  background-color: greenyellow;
+  background-color: #adff2f;
 }
 .right-button:hover {
   background-color: greenyellow;
@@ -123,7 +123,7 @@ body {
   border: none;
   margin-left: 20px;
   border-radius: 5px;
-  background-color: lightgray;
+  background-color: #d3d3d3;
 }
 .moves-button:hover {
   background-color: greenyellow;
