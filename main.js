@@ -1,4 +1,4 @@
-let pokeCounter = 133;
+let pokeCounter = 1;
 let infoMoves = true; //true is info, moves is false;
 let data = null;
 
