@@ -131,3 +131,7 @@ body {
 .info-button:hover {
   background-color: greenyellow;
 }
+.info-moves-content-text {
+  max-height: 360px;
+  overflow-y: scroll;
+}

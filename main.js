@@ -74,6 +74,8 @@ rightButton.addEventListener("click", () => {
 function loadInfoMoves() {
   if (infoMoves) {
     document.getElementById("info-moves-title").textContent = "Info";
+    document.getElementById("info-stats").style.display = "";
+    document.getElementById("moves-list").style.display = "none";
     document.getElementById("height").textContent =
       "height: " + data.height / 10 + " m";
     document.getElementById("weight").textContent =
@@ -92,6 +94,13 @@ function loadInfoMoves() {
       "speed: " + data.stats[5].base_stat;
   } else {
     document.getElementById("info-moves-title").textContent = "Moves";
+    document.getElementById("info-stats").style.display = "none";
+    document.getElementById("moves-list").style.display = "";
+    let movesText = "";
+    for (let i = 0; i < data.moves.length; i++) {
+      movesText = movesText + data.moves[i].move.name + "<br>";
+    }
+    document.getElementById("moves-text").innerHTML = movesText;
   }
 }
 infoButton.addEventListener("click", () => {
