@@ -21,7 +21,7 @@ body {
   align-items: center;
 }
 .poke-photos {
-  border: 1px solid black;
+  border: 4px solid black;
   width: 360px;
   height: 360px;
 }
@@ -53,9 +53,6 @@ body {
   font-size: 14px;
   display: inline-block;
 }
-.right-column {
-  flex: 50%;
-}
 .buttons {
   margin-top: 32px;
 }
@@ -76,4 +73,57 @@ body {
   margin-left: 20px;
   border-radius: 5px;
   background-color: lightgray;
+}
+.left-button:hover {
+  background-color: greenyellow;
+}
+.right-button:hover {
+  background-color: greenyellow;
+}
+.right-column {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-moves {
+  font-weight: bold;
+  font-size: 24px;
+}
+.info-moves-content {
+  width: 360px;
+  height: 440px;
+  margin-top: 16px;
+  background-color: lightgrey;
+}
+.info-moves-content-text {
+  padding: 24px;
+  font-size: 24px;
+}
+.info-moves-button {
+  margin-top: 56px;
+}
+.info-button {
+  width: 96px;
+  height: 40px;
+  font-size: 20px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+.moves-button {
+  width: 96px;
+  height: 40px;
+  font-size: 20px;
+  border: none;
+  margin-left: 20px;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+.moves-button:hover {
+  background-color: greenyellow;
+}
+.info-button:hover {
+  background-color: greenyellow;
 }
