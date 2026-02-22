@@ -39,16 +39,17 @@ body {
 .types-container {
   width: 360px;
   align-self: flex-start;
-  margin-top: 16px;
+  margin-top: 24px;
   padding-left: 80px;
 }
 .types {
   font-weight: bold;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 .example-type {
   background-color: yellowgreen;
   padding: 5px;
+  width: auto;
   border-radius: 5px;
   font-size: 14px;
   display: inline-block;
