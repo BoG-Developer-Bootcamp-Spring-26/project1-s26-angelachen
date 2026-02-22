@@ -1,4 +1,4 @@
-let pokeCounter = 1025;
+let pokeCounter = 133;
 let infoMoves = true; //true is info, moves is false;
 let data = null;
 
@@ -30,7 +30,7 @@ const typeColor = new Map([
 ]);
 async function getPokemon(id) {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  const data = await response.json();
+  data = await response.json();
 
   const image = data.sprites.front_default;
   document.getElementById("poke-img").src = image;
@@ -54,6 +54,7 @@ async function getPokemon(id) {
   document.getElementById("type-1").textContent = type1;
   document.getElementById("type-1").style.backgroundColor =
     typeColor.get(type1);
+  loadInfoMoves();
 }
 leftButton.addEventListener("click", () => {
   if (pokeCounter > 1) {
@@ -73,6 +74,22 @@ rightButton.addEventListener("click", () => {
 function loadInfoMoves() {
   if (infoMoves) {
     document.getElementById("info-moves-title").textContent = "Info";
+    document.getElementById("height").textContent =
+      "height: " + data.height / 10 + " m";
+    document.getElementById("weight").textContent =
+      "weight: " + data.weight / 10 + " kg";
+    document.getElementById("hp").textContent =
+      "hp: " + data.stats[0].base_stat;
+    document.getElementById("attack").textContent =
+      "attack: " + data.stats[1].base_stat;
+    document.getElementById("defense").textContent =
+      "defense: " + data.stats[2].base_stat;
+    document.getElementById("special-attack").textContent =
+      "special-attack: " + data.stats[3].base_stat;
+    document.getElementById("special-defense").textContent =
+      "special-defense: " + data.stats[4].base_stat;
+    document.getElementById("speed").textContent =
+      "speed: " + data.stats[5].base_stat;
   } else {
     document.getElementById("info-moves-title").textContent = "Moves";
   }
